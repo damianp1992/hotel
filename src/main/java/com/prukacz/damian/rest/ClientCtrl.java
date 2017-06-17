@@ -17,7 +17,7 @@ public class ClientCtrl {
     @Autowired
     public ClientCtrl(ClientRepository clientRepository) {
         this.clientRepository = clientRepository;
-a   }
+   }
 
     @RequestMapping(value = "/save", method = RequestMethod.POST)
     public List<Client> saveClient(@RequestBody @Validated final Client client) {
