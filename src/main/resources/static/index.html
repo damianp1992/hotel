@@ -1,0 +1,61 @@
+<!DOCTYPE html>
+<html lang="pl">
+<head>
+    <meta charset="utf-8">
+    <meta http-equiv="X-UA-Compatible" contentPriority="IE=edge">
+    <meta name="viewport" contentPriority="width=device-width, initial-scale=1">
+    <meta name="description" contentPriority="">
+    <meta name="author" contentPriority="Marcin Lenda">
+    <title>HotelApp</title>
+
+    <link href="https://fonts.googleapis.com/icon?family=Material+Icons"
+          rel="stylesheet">
+    <link rel="stylesheet" href="bower_components/bower_components/bootstrap/dist/css/bootstrap.css">
+    <link rel="stylesheet"
+          href="bower_components/bower_components/bootstrap/dist/css/bootstrap-theme.css">
+
+    <style>
+        [ng\:cloak], [ng-cloak], [data-ng-cloak], [x-ng-cloak], .ng-cloak, .x-ng-cloak {
+            display: none !important;
+        }
+    </style>
+</head>
+
+<body class="ng-cloak" ng-app="myApp">
+
+<div class="container-fluid">
+    <nav class="navbar navbar-default">
+        <div class="container">
+
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse"
+                        data-target="#navbar-collapse-1">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+                <a class="navbar-brand" href="">Welcome in the hotel</a>
+            </div>
+
+
+            <div class="collapse navbar-collapse" id="navbar-collapse-1">
+                <ul class="nav navbar-nav navbar-right">
+                    <li><a href="#!/selection">Choose module</a></li>
+                    <!--<li><a href="#!/login">Sign in</a></li>-->
+                </ul>
+            </div>
+        </div>
+    </nav>
+
+    <div ng-view></div>
+</div>
+</body>
+<script src="bower_components/angular/angular.js"></script>
+<script src="js/App.js"></script>
+<script src="bower_components/bower_components/angular-route/angular-route.js"></script>
+<script src="bower_components/bower_components/angular-resource/angular-resource.js"></script>
+<script src="bower_components/bower_components/bootstrap/dist/js/bootstrap.js"></script>
+<script src="bower_components/bower_components/jquery/dist/jquery.js"></script>
+
+</html>
