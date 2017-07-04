@@ -18,19 +18,16 @@ public class Receptionist {
     @Column(name = "name")
     @NotBlank(message = "Name field can't be empty")
     @Size(min = 2, max = 20, message = "Invalid name")
-    @Pattern(regexp = "[A-Z][a-z]+", message = "Invalid name")
     private String name;
 
     @Column(name = "surname")
     @NotBlank(message = "Surname field can't be empty")
     @Size(min = 2, max = 20, message = "Invalid surname")
-    @Pattern(regexp = "[A-Z][a-z]+", message = "Invalid surname")
     private String surname;
 
     @Column(name = "identityCard")
     @NotBlank(message = "Identity card field can't be empty")
     @Size(min = 2, max = 20, message = "Invalid identity card")
-    @Pattern(regexp = "[A-Z]{3}[0-9]{4}", message = "Invalid identity card")
     private String identityCard;
 
     @Column(name = "phone")

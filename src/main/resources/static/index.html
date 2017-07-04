@@ -24,6 +24,7 @@
 <body class="ng-cloak" ng-app="myApp">
 
 <div class="container-fluid">
+
     <nav class="navbar navbar-default">
         <div class="container">
 
@@ -41,8 +42,8 @@
 
             <div class="collapse navbar-collapse" id="navbar-collapse-1">
                 <ul class="nav navbar-nav navbar-right">
-                    <li><a href="#!/selection">Choose module</a></li>
-                    <!--<li><a href="#!/login">Sign in</a></li>-->
+                    <li><a href="#!/register">Register</a></li>
+                    <li><a href="#!/login">Sign in</a></li>
                 </ul>
             </div>
         </div>
@@ -51,11 +52,15 @@
     <div ng-view></div>
 </div>
 </body>
+
 <script src="bower_components/angular/angular.js"></script>
 <script src="js/App.js"></script>
 <script src="bower_components/bower_components/angular-route/angular-route.js"></script>
 <script src="bower_components/bower_components/angular-resource/angular-resource.js"></script>
 <script src="bower_components/bower_components/bootstrap/dist/js/bootstrap.js"></script>
 <script src="bower_components/bower_components/jquery/dist/jquery.js"></script>
+<script src="js/clientController/RegisterCtrl.js"></script>
+<script src="js/clientController/AllClientsCtrl.js"></script>
+<script src="js/clientController/ClientCtrl.js"></script>
 
 </html>

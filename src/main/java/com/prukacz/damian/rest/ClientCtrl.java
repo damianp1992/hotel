@@ -1,6 +1,7 @@
 package com.prukacz.damian.rest;
 
 import com.prukacz.damian.entity.Client;
+import com.prukacz.damian.entity.model.ClientId;
 import com.prukacz.damian.repository.ClientRepository;
 import org.springframework.beans.factory.annotation.Autowired;
 import org.springframework.validation.annotation.Validated;
@@ -20,18 +21,18 @@ public class ClientCtrl {
    }
 
     @RequestMapping(value = "/save", method = RequestMethod.POST)
-    public List<Client> saveClient(@RequestBody @Validated final Client client) {
+    public List<Client> saveClient(@RequestBody final Client client) {
         System.out.println(client);
         clientRepository.save(client);
 
-        return clientRepository.findAll();
+        return null;
     }
+    //przepychaj te id do backendu z frontendu
+    @RequestMapping(value = "/delete", method = RequestMethod.DELETE)
+    public void deleteClient(@RequestBody final ClientId clientId) {
+        clientRepository.delete(clientId.getId());
 
-    @RequestMapping(value = "/delete/{clientId}", method = RequestMethod.GET)
-    public List<Client> deleteClient(@PathVariable final long clientId) {
-        clientRepository.delete(clientId);
-
-        return clientRepository.findAll();
+//        return clientRepository.findAll();
     }
 
     @RequestMapping(value = "/all", method = RequestMethod.GET)
@@ -40,14 +41,19 @@ public class ClientCtrl {
         return clientRepository.findAll();
     }
 
+//    @RequestMapping(value = "/edit", method = RequestMethod.POST)
+//    public List<Client> editClient(@RequestBody final Client client){
+//
+//        return clientRepository.edit(client);
+//    }
+
     @RequestMapping(value = "/name/{name}", method = RequestMethod.GET)
     public List<Client> findByName(@PathVariable final String name) {
-        System.out.println(name);
 
         return clientRepository.findByName(name);
     }
 
-    @RequestMapping(value = "/surname/{surname}", method = RequestMethod.GET)
+    @RequestMapping(value = "/surname", method = RequestMethod.GET)
     public List<Client> findBySurname(@PathVariable final String surname) {
 
         return clientRepository.findBySurname(surname);

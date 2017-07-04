@@ -9,7 +9,15 @@ var app = angular.module('myApp', ['ngRoute', 'ngResource'])
         $routeProvider
             .when('/register', {
                 templateUrl: '/views/register.html',
-                controller: ''
+                controller: 'RegisterCtrl'
+            })
+            .when('/all_clients', {
+                templateUrl: '/views/all_clients.html',
+                controller: 'AllClientsCtrl'
+            })
+            .when('/find', {
+                templateUrl: '/views/find-client-by-name.html',
+                controller: 'ClientCtrl'
             })
             .when('/login', {
                 templateUrl: '/views/login.html',
@@ -19,8 +27,8 @@ var app = angular.module('myApp', ['ngRoute', 'ngResource'])
                 templateUrl: '/views/selection.html',
                 controller: ''
             })
-            .when('/client', {
-                templateUrl: '/views/client.html',
+            .when('/clientController', {
+                templateUrl: '/views/clientController.html',
                 controller: ''
             })
             .when('/receptionist', {

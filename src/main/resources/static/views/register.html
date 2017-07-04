@@ -3,36 +3,39 @@
         <div class="form-group" style="text-align: center;">
             <h1>Registration</h1><br/>
 
-            <form role="form">
+            <form role="form" ng-submit="test()">
                 <div class="form-group">
                     <label for="name">Name</label>
-                    <input type="name" class="form-control" id="name" placeholder="name">
+                    <input type="name" class="form-control" id="name" placeholder="name" ng-model="client.name">
                 </div>
                 <div class="form-group">
                     <label for="surname">Surname</label>
-                    <input type="surname" class="form-control" id="surname" placeholder="surname">
+                    <input type="surname" class="form-control" id="surname" placeholder="surname" ng-model="client.surname">
                 </div>
                 <div class="form-group">
                     <label for="exampleInputEmail1">E-mail</label>
-                    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="e-mail">
+                    <input type="email" class="form-control" id="exampleInputEmail1" placeholder="e-mail"
+                           ng-model="client.email">
                 </div>
                 <div class="form-group">
                     <label for="exampleInputLogin1">Login</label>
-                    <input type="login" class="form-control" id="exampleInputLogin1" placeholder="login">
+                    <input type="login" class="form-control" id="exampleInputLogin1" placeholder="login"
+                           ng-model="client.login">
                 </div>
                 <div class="form-group">
                     <label for="exampleInputPassword1">Password</label>
-                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="password">
+                    <input type="password" class="form-control" id="exampleInputPassword1" placeholder="password"
+                           ng-model="client.password">
                 </div>
                 <div class="form-group">
                     <label for="exampleInputPassword1">Confirm password</label>
-                    <input type="password" class="form-control" id="exampleInputPassword2" placeholder="confirm password">
+                    <input type="password" class="form-control" id="exampleInputPassword2" placeholder="confirm password"
+                           ng-model="client.confirmPassword">
                 </div>
                 <label class="checkbox pull-left" style="padding: 20px">
                     <input type="checkbox" value="remember-me">
                     Remember me
                 </label>
-
                 <button type="submit" class="btn btn-lg btn-primary btn-block">Create account</button>
             </form>
         </div>
