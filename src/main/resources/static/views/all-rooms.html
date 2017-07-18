@@ -1,0 +1,31 @@
+<div class="panel panel-primary">
+    <div class="panel-heading"><h3 class="panel-title">Rooms</h3></div>
+    <div class="panel-body">
+        <table class="table table-striped">
+            <thead>
+            <tr>
+                <th>Id</th>
+                <th>roomNumber</th>
+                <th>numberOfPlace</th>
+                <th>numberOfBeds</th>
+                <th>pricePerNight</th>
+                <th>check</th>
+            </tr>
+            </thead>
+            <tr data-ng-repeat="room in rooms">
+                <td><span class="done-{{todo.done}}">{{room.roomId}}</span></td>
+                <td><span class="done-{{todo.done}}">{{room.roomNumber}}</span></td>
+                <td><span class="done-{{todo.done}}">{{room.numberOfPlace}}</span></td>
+                <td><span class="done-{{todo.done}}">{{room.numberOfBeds}}</span></td>
+                <td><span class="done-{{todo.done}}">{{room.pricePerNight}}</span></td>
+                <td><input type="checkbox" data-ng-model="room.done" title="Mark Complete" /></td>
+            </tr>
+        </table>
+    </div>
+</div>
+<div class="panel panel-default">
+    <div class="panel-body">
+        <button class="btn btn-danger" data-ng-click="deleteCompleted()"> Usuń wykonane <span
+                class="glyphicon glyphicon-remove"></span></button>
+    </div>
+</div>

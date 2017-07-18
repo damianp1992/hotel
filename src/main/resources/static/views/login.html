@@ -2,70 +2,86 @@
     <!--<div id="newLog" style="border: 1px solid black; border-radius: 5px; padding: 35px; width: 30%; margin: 45px auto;">-->
         <!--<div class="form-group" style="text-align: center;">-->
             <!--<h1>Sign in</h1><br/>-->
-
-            <!--<form role="form">-->
-                <!--<div class="form-group">-->
-                    <!--<label for="exampleInputLogin1">Login</label>-->
-                    <!--<input type="login" class="form-control" id="exampleInputLogin1" placeholder="login">-->
-                <!--</div>-->
-                <!--<div class="form-group">-->
-                    <!--<label for="exampleInputPassword1">Password</label>-->
-                    <!--<input type="password" class="form-control" id="exampleInputPassword1" placeholder="password">-->
-                <!--</div>-->
-                <!--<label class="checkbox pull-left" style="padding: 20px">-->
-                    <!--<input type="checkbox" value="remember-me">-->
-                    <!--Remember me-->
-                <!--</label>-->
-                <!--<a href=clientControllerient"><button type="submit" class="btn btn-lg btn-primary btn-block">Sign in</button></a><br/>-->
-                <!--<a href="#!/register" class="text-center new-account">Create an account </a>-->
+            <!--<form ng-submit="login()">-->
+                <!--<form role="form">-->
+                    <!--<div class="form-group">-->
+                        <!--<label for="login">Login:</label> <input type="txt"-->
+                                                                 <!--class="form-control" ng-model="client.login"-->
+                                                                 <!--id="login">-->
+                    <!--</div>-->
+                    <!--<div class="form-group">-->
+                        <!--<label for="pwd">Password:</label> <input type="password"-->
+                                                                  <!--class="form-control" id="pwd"-->
+                                                                  <!--ng-model="client.password">-->
+                    <!--</div>-->
+                    <!--<label class="checkbox pull-left" style="padding: 20px">-->
+                        <!--<input type="checkbox" value="remember-me">-->
+                        <!--Remember me-->
+                    <!--</label>-->
+                    <!--<a href=all_clients>-->
+                        <!--<button type="submit" class="btn btn-lg btn-primary btn-block">Sign in</button>-->
+                    <!--</a><br/>-->
+                    <!--<a href="#!/register" class="text-center new-account">Create an account </a>-->
+                <!--</form>-->
             <!--</form>-->
         <!--</div>-->
     <!--</div>-->
 <!--</div>-->
 
 <!DOCTYPE html>
-<html lang="en">
+<html xmlns="http://www.w3.org/1999/xhtml" xmlns:th="http://www.thymeleaf.org"
+>
 <head>
-    <link rel="stylesheet" href="./bower_components/bootstrap-css-only/css/bootstrap.min.css" />
+    <title>Spring Security Example </title>
+    <div th:replace="fragments/header :: header-css"/>
 </head>
-<body ng-app="myApp">
-<div class="container" ng-controller="AppController">
-    <div class="page-header">
-        <h1>A checklist</h1>
-    </div>
-    <div class="alert alert-info" role="alert" ng-hide="items &amp;&amp; items.length > 0">
-        There are no items yet.
-    </div>
-    <form class="form-horizontal" role="form" ng-submit="addItem(newItem)">
-        <div class="form-group" ng-repeat="item in items">
-            <div class="checkbox col-xs-9">
-                <label>
-                    <input type="checkbox" ng-model="item.checked" ng-change="updateItem(item)"/> {{item.description}}
-                </label>
-            </div>
-            <div class="col-xs-3">
-                <button class="pull-right btn btn-danger" type="button" title="Delete"
-                        ng-click="deleteItem(item)">
-                    <span class="glyphicon glyphicon-trash"></span>
-                </button>
-            </div>
+<body>
+
+<div th:replace="fragments/header :: header"/>
+
+<div class="container">
+
+    <div class="row" style="margin-top:20px">
+        <div class="col-xs-12 col-sm-8 col-md-6 col-sm-offset-2 col-md-offset-3">
+            <form th:action="@{/login}" method="post">
+                <fieldset>
+                    <h1>Please Sign In</h1>
+
+                    <div th:if="${param.error}">
+                        <div class="alert alert-danger">
+                            Invalid username and password.
+                        </div>
+                    </div>
+                    <div th:if="${param.logout}">
+                        <div class="alert alert-info">
+                            You have been logged out.
+                        </div>
+                    </div>
+
+                    <div class="form-group">
+                        <input type="text" name="username" id="username" class="form-control input-lg"
+                               placeholder="UserName" required="true" autofocus="true"/>
+                    </div>
+                    <div class="form-group">
+                        <input type="password" name="password" id="password" class="form-control input-lg"
+                               placeholder="Password" required="true"/>
+                    </div>
+
+                    <div class="row">
+                        <div class="col-xs-6 col-sm-6 col-md-6">
+                            <input type="submit" class="btn btn-lg btn-primary btn-block" value="Sign In"/>
+                        </div>
+                        <div class="col-xs-6 col-sm-6 col-md-6">
+                        </div>
+                    </div>
+                </fieldset>
+            </form>
         </div>
-        <hr />
-        <div class="input-group">
-            <input type="text" class="form-control" ng-model="newItem" placeholder="Enter the description..." />
-            <span class="input-group-btn">
-            <button class="btn btn-default" type="submit" ng-disabled="!newItem" title="Add">
-              <span class="glyphicon glyphicon-plus"></span>
-            </button>
-          </span>
-        </div>
-    </form>
+    </div>
+
 </div>
-<script type="text/javascript" src="./bower_components/angular/angular.min.js"></script>
-<script type="text/javascript" src="./bower_components/angular-resource/angular-resource.min.js"></script>
-<script type="text/javascript" src="./bower_components/lodash/dist/lodash.min.js"></script>
-<script type="text/javascript" src="./app/app.js"></script>
-<script type="text/javascript" src="./app/controllers.js"></script>
-<script type="text/javascript" src="./app/services.js"></script>
+
+<div th:replace="fragments/footer :: footer"/>
+
 </body>
 </html>

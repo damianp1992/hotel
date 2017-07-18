@@ -5,7 +5,6 @@
             <div class="navbar-header">
                 <a class="navbar-brand" href="#">Hotel Booking App</a>
             </div>
-            <!--<p class="navbar-text navbar-right" text="'Signed in as ' + ${username}" style="margin-right: 10px;">Signed in as Anonymus</p>-->
         </div>
     </nav>
 </header>
@@ -13,11 +12,6 @@
 <div>
     <div class="row">
         <div class="col-lg-offset-2 col-lg-8">
-
-            <!--<div class="btn-group" role="group">-->
-                <!--<button ng-click="vm.getAll()" type="button" class="btn btn-default">All</button>-->
-                <!--&lt;!&ndash;<button ng-click="vm.getAffordable()" type="button" class="btn btn-default">Less than 100$</button>&ndash;&gt;-->
-            <!--</div>-->
 
             <table class="table">
                 <thead>
@@ -38,7 +32,7 @@
                     <td>{{client.email}}</td>
                     <td>{{client.login}}</td>
                     <td>
-                        <button class="btn btn-danger" ng-click="vm.deleteclient(client.id)">Delete</button>
+                        <button class="btn btn-danger" ng-click="deleteClient(client)">Delete</button>
                     </td>
                 </tr>
                 </tbody>
